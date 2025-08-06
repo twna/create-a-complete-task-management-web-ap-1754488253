@@ -1,0 +1,92 @@
+[
+  {
+    "id": "task-001",
+    "agent": "frontend-developer",
+    "description": "Set up React project structure and configuration files",
+    "file_path": "frontend/package.json"
+  },
+  {
+    "id": "task-002",
+    "agent": "frontend-developer",
+    "description": "Create React components for task creation",
+    "file_path": "frontend/src/components/TaskCreationForm.jsx"
+  },
+  {
+    "id": "task-003",
+    "agent": "frontend-developer",
+    "description": "Create React components for task editing",
+    "file_path": "frontend/src/components/TaskEditForm.jsx"
+  },
+  {
+    "id": "task-004",
+    "agent": "frontend-developer",
+    "description": "Create React components for task filtering",
+    "file_path": "frontend/src/components/TaskFilter.jsx"
+  },
+  {
+    "id": "task-005",
+    "agent": "backend-developer",
+    "description": "Set up Express.js project structure and configuration files",
+    "file_path": "backend/package.json"
+  },
+  {
+    "id": "task-006",
+    "agent": "backend-developer",
+    "description": "Implement task CRUD operations in Express.js",
+    "file_path": "backend/routes/tasks.js"
+  },
+  {
+    "id": "task-007",
+    "agent": "backend-developer",
+    "description": "Set up MongoDB connection in Express.js",
+    "file_path": "backend/models/db.js"
+  },
+  {
+    "id": "task-008",
+    "agent": "database-admin",
+    "description": "Design and create MongoDB schemas for tasks",
+    "file_path": "backend/models/taskModel.js"
+  },
+  {
+    "id": "task-009",
+    "agent": "devops-engineer",
+    "description": "Create Dockerfile for the backend service",
+    "file_path": "backend/Dockerfile"
+  },
+  {
+    "id": "task-010",
+    "agent": "devops-engineer",
+    "description": "Create Dockerfile for the frontend service",
+    "file_path": "frontend/Dockerfile"
+  },
+  {
+    "id": "task-011",
+    "agent": "devops-engineer",
+    "description": "Configure Docker Compose for the entire application stack",
+    "file_path": "docker-compose.yml"
+  },
+  {
+    "id": "task-012",
+    "agent": "frontend-developer",
+    "description": "Ensure frontend API calls are correctly fetching data from backend endpoints",
+    "file_path": "frontend/src/utils/apiClient.js"
+  },
+  {
+    "id": "task-013",
+    "agent": "backend-developer",
+    "description": "Align Express.js models with MongoDB schemas",
+    "file_path": "backend/models/taskModel.js"
+  },
+  {
+    "id": "task-014",
+    "agent": "devops-engineer",
+    "description": "Ensure Docker configuration includes MongoDB, backend, and frontend services",
+    "file_path": "docker-compose.yml"
+  },
+  {
+    "id": "task-015",
+    "agent": "full-stack-developer",
+    "description": "Perform integration tests to ensure consistent data flow between frontend, backend, and database",
+    "file_path": "integration-tests/tests.js"
+  }
+]

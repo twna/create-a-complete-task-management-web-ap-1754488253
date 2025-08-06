@@ -1,0 +1,9 @@
+{
+    "code": "import React, { useState } from 'react';\n\nfunction TaskCreationForm({ onTaskCreate }) {\n  const [taskTitle, setTaskTitle] = useState('');\n  const [taskDescription, setTaskDescription] = useState('');\n\n  const handleSubmit = (event) => {\n    event.preventDefault();\n    const newTask = {\n      title: taskTitle,\n      description: taskDescription,\n      status: 'pending',\n      createdAt: new Date()\n    };\n    onTaskCreate(newTask);\n    setTaskTitle('');\n    setTaskDescription('');\n  };\n\n  return (\n    <form onSubmit={handleSubmit}>\n      <div>\n        <label htmlFor='taskTitle'>Title:</label>\n        <input\n          id='taskTitle'\n          type='text'\n          value={taskTitle}\n          onChange={(e) => setTaskTitle(e.target.value)}\n          required\n        />\n      </div>\n      <div>\n        <label htmlFor='taskDescription'>Description:</label>\n        <textarea\n          id='taskDescription'\n          value={taskDescription}\n          onChange={(e) => setTaskDescription(e.target.value)}\n          required\n        ></textarea>\n      </div>\n      <button type='submit'>Create Task</button>\n    </form>\n  );\n}\n\nexport default TaskCreationForm;",
+    "summary": "Implemented a React component named TaskCreationForm for creating new tasks. It includes state management for task title and description, and a form submission handler that creates a new task object and calls the onTaskCreate callback provided by the parent component. The form includes input fields for the task's title and description, and a submit button. Upon submission, the form fields are reset.",
+    "checklist": [
+        "Create TaskCreationForm component with state hooks for title and description",
+        "Handle form submission and task object creation",
+        "Reset form fields after submission"
+    ]
+}

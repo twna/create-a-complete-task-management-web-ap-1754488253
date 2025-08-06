@@ -1,11 +1,9 @@
 {
-    "code": "import React, { useState, useEffect } from 'react';\n\nfunction TaskEditForm({ task, onSave, onCancel }) {\n  const [title, setTitle] = useState(task.title);\n  const [description, setDescription] = useState(task.description);\n  const [dueDate, setDueDate] = useState(task.dueDate);\n\n  useEffect(() => {\n    setTitle(task.title);\n    setDescription(task.description);\n    setDueDate(task.dueDate);\n  }, [task]);\n\n  const handleSubmit = (e) => {\n    e.preventDefault();\n    onSave({ ...task, title, description, dueDate });\n  };\n\n  return (\n    <form onSubmit={handleSubmit}>\n      <label htmlFor='title'>Title:</label>\n      <input\n        id='title'\n        type='text'\n        value={title}\n        onChange={(e) => setTitle(e.target.value)}\n      />\n\n      <label htmlFor='description'>Description:</label>\n      <textarea\n        id='description'\n        value={description}\n        onChange={(e) => setDescription(e.target.value)}\n      />\n\n      <label htmlFor='dueDate'>Due Date:</label>\n      <input\n        id='dueDate'\n        type='date'\n        value={dueDate}\n        onChange={(e) => setDueDate(e.target.value)}\n      />\n\n      <button type='submit'>Save</button>\n      <button type='button' onClick={onCancel}>Cancel</button>\n    </form>\n  );\n}\n\nexport default TaskEditForm;",
-    "summary": "Implemented a React component named TaskEditForm for editing tasks. It includes state management for task properties (title, description, due date) and effect hooks to update these states when the task prop changes. The component renders a form with inputs for the task title, description, and due date, and buttons to save or cancel the edit. The onSave callback is triggered upon form submission, passing the updated task object, while onCancel is called when the cancel button is clicked.",
+    "code": "import React, { useState } from 'react';\n\nconst TaskFilter = ({ onFilterChange }) => {\n  const [filter, setFilter] = useState('');\n\n  const handleFilterChange = (e) => {\n    const newFilter = e.target.value;\n    setFilter(newFilter);\n    onFilterChange(newFilter);\n  };\n\n  return (\n    <div className='task-filter'>\n      <input\n        type='text'\n        placeholder='Filter tasks...'\n        value={filter}\n        onChange={handleFilterChange}\n      />\n    </div>\n  );\n};\n\nexport default TaskFilter;",
+    "summary": "Implemented a React component named TaskFilter that allows users to filter tasks. It consists of an input field that updates the filter state on change and calls the onFilterChange callback prop with the new filter value. This component can be used in the task management application to enable users to search and filter tasks dynamically.",
     "checklist": [
-        "Create TaskEditForm component with state management for task properties",
-        "Use effect hooks to update state when task prop changes",
-        "Render form with inputs for title, description, and due date",
-        "Implement onSave callback to handle task updates",
-        "Implement onCancel callback to handle edit cancellation"
+        "Create TaskFilter component with an input field for filtering tasks",
+        "Implement useState hook to manage the filter state",
+        "Invoke onFilterChange callback prop when the filter value changes"
     ]
 }

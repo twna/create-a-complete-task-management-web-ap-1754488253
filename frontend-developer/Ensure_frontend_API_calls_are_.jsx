@@ -1,0 +1,10 @@
+{
+    "code": "import axios from 'axios';\n\nconst API_BASE_URL = 'http://localhost:5000/api';\n\nexport const fetchTasks = async () => {\n  try {\n    const response = await axios.get(`${API_BASE_URL}/tasks`);\n    return response.data;\n  } catch (error) {\n    console.error('Error fetching tasks:', error);\n    throw error;\n  }\n};\n\nexport const createTask = async (taskData) => {\n  try {\n    const response = await axios.post(`${API_BASE_URL}/tasks`, taskData);\n    return response.data;\n  } catch (error) {\n    console.error('Error creating task:', error);\n    throw error;\n  }\n};\n\nexport const updateTask = async (taskId, taskData) => {\n  try {\n    const response = await axios.put(`${API_BASE_URL}/tasks/${taskId}`, taskData);\n    return response.data;\n  } catch (error) {\n    console.error('Error updating task:', error);\n    throw error;\n  }\n};\n\nexport const deleteTask = async (taskId) => {\n  try {\n    const response = await axios.delete(`${API_BASE_URL}/tasks/${taskId}`);\n    return response.data;\n  } catch (error) {\n    console.error('Error deleting task:', error);\n    throw error;\n  }\n};",
+    "summary": "Implemented a set of functions using axios to interact with the backend REST API. These functions fetch all tasks, create a new task, update an existing task, and delete a task. The API calls are made to the Express.js backend, which has been set up by the backend-developer agent. The base URL for the API is assumed to be 'http://localhost:5000/api'.",
+    "checklist": [
+        "Implemented fetchTasks function to GET all tasks from the backend",
+        "Implemented createTask function to POST a new task to the backend",
+        "Implemented updateTask function to PUT updated task data to the backend",
+        "Implemented deleteTask function to DELETE a task from the backend"
+    ]
+}
